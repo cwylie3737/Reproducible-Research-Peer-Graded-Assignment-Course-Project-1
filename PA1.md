@@ -287,7 +287,7 @@ median(activityImputedByDate$steps)
 ```
 
 
-*There is a very slight change (+1 step per day) in the recalculated median number of steps peer day.*
+*There is a very slight change (+1 step per day) in the recalculated median number of steps per day.*
 
 
 ### Are there differences in activity patterns between weekdays and weekends? For this part the weekdays() function may be of some help here. Use the dataset with the filled-in missing values for this part.
@@ -336,7 +336,13 @@ activityImputedAverage <- aggregate(steps ~ interval + weekday, activityImputed,
 
 library(lattice)
 
-xyplot(steps ~ interval | weekday, data = activityImputedAverage, layout = c(1, 2), type = "l", xlab = "Interval", ylab = "Number of steps", main=list("Time Series Plot - Average Steps per Interval - Weekday vs Weekend",cex=0.9))
+xyplot(steps ~ interval | weekday, 
+       data = activityImputedAverage, 
+       layout = c(1, 2), type = "l", 
+       xlab = "Interval", 
+       ylab = "Number of steps", 
+       main=list("Time Series Plot - Average Steps per Interval - Weekday vs Weekend", cex=0.9)
+       )
 ```
 
 ![](PA1_files/figure-html/plot4-1.png)<!-- -->
